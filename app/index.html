@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TradeFlow">
+<link rel="manifest" href="manifest.webmanifest">
+<title>TradeFlow — quotes &amp; invoices from your phone</title>
+<style>
+:root{
+  --bg:#0b0b0d; --card:#15151a; --card2:#1d1d24; --line:rgba(255,255,255,.09);
+  --ink:#f4f4f6; --dim:#9a9aa4; --dim2:#63636d;
+  --acc:#4ade80; --warn:#fbbf24; --bad:#f87171;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 var(--sans);
+     padding-bottom:calc(68px + var(--safe-b));overscroll-behavior-y:contain}
+h1,h2,h3{margin:0;font-weight:600}
+button,input,select,textarea{font:inherit;font-size:16px}
+
+header{position:sticky;top:0;z-index:20;background:rgba(11,11,13,.94);backdrop-filter:blur(12px);
+       border-bottom:1px solid var(--line);padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;
+       display:flex;align-items:center;gap:10px}
+header h1{font-size:17px;letter-spacing:-.01em}
+header .sub{font-size:12px;color:var(--dim);font-weight:400}
+.btn{background:var(--acc);color:#06210f;border:0;border-radius:10px;padding:11px 16px;
+     font-weight:600;font-size:15px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.sm{padding:7px 12px;font-size:13px;border-radius:8px}
+.btn.bad{background:transparent;color:var(--bad);border:1px solid rgba(248,113,113,.4)}
+.btn:active{transform:scale(.97)}
+.btn.full{width:100%;margin-top:10px}
+
+main{padding:14px 16px 20px;max-width:680px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:0 0 10px}
+.row{display:flex;align-items:center;gap:10px}
+.row.wrap{flex-wrap:wrap}
+.grow{flex:1;min-width:0}
+.dim{color:var(--dim);font-size:13px}
+.dim2{color:var(--dim2);font-size:12px}
+.trunc{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mono{font-variant-numeric:tabular-nums}
+.right{text-align:right}
+
+label{display:block;font-size:12px;color:var(--dim);margin:12px 0 5px;letter-spacing:.02em}
+input,select,textarea{width:100%;background:var(--card2);border:1px solid var(--line);
+  border-radius:10px;color:var(--ink);padding:12px}
+textarea{min-height:70px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc)}
+
+.pill{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;font-size:11px;
+      font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.pill.draft{background:rgba(154,154,164,.16);color:var(--dim)}
+.pill.sent{background:rgba(251,191,36,.16);color:var(--warn)}
+.pill.accepted,.pill.paid{background:rgba(74,222,128,.16);color:var(--acc)}
+.pill.part{background:rgba(251,191,36,.16);color:var(--warn)}
+.pill.overdue{background:rgba(248,113,113,.16);color:var(--bad)}
+
+nav{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;
+    background:rgba(15,15,18,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+    padding-bottom:var(--safe-b)}
+nav a{flex:1;text-align:center;padding:9px 2px 8px;color:var(--dim2);text-decoration:none;
+      font-size:10px;font-weight:600;letter-spacing:.04em;cursor:pointer}
+nav a .ic{display:block;font-size:19px;margin-bottom:1px;line-height:1.2}
+nav a.on{color:var(--acc)}
+
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 12px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px}
+.tile b{display:block;font-size:23px;font-weight:600;letter-spacing:-.02em;margin-top:3px}
+.tile.good b{color:var(--acc)} .tile.bad b{color:var(--bad)} .tile.warn b{color:var(--warn)}
+
+.item{display:flex;align-items:center;gap:11px;padding:12px 0;border-top:1px solid var(--line);cursor:pointer}
+.item:first-of-type{border-top:0}
+.empty{text-align:center;color:var(--dim2);padding:36px 14px;font-size:14px;line-height:1.6}
+
+.sheet{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.6);display:flex;align-items:flex-end}
+.sheet .inner{background:var(--bg);width:100%;max-height:94vh;overflow:auto;
+  border-radius:18px 18px 0 0;padding:16px 16px calc(26px + var(--safe-b));
+  border-top:1px solid var(--line)}
+.sheet h2{font-size:18px;margin:0 0 4px}
+.lineitem{background:var(--card2);border:1px solid var(--line);border-radius:11px;padding:11px;margin:0 0 8px}
+.totals{border-top:1px solid var(--line);margin-top:12px;padding-top:11px}
+.totals .row{justify-content:space-between;padding:3px 0;font-size:14px}
+.totals .row.big{font-size:19px;font-weight:600;padding-top:8px}
+.fab{position:fixed;right:16px;bottom:calc(80px + var(--safe-b));z-index:25;width:54px;height:54px;
+  border-radius:27px;background:var(--acc);color:#06210f;border:0;font-size:28px;line-height:1;
+  box-shadow:0 6px 20px rgba(0,0,0,.5);cursor:pointer}
+.note{background:rgba(74,222,128,.09);border:1px solid rgba(74,222,128,.25);border-radius:11px;
+  padding:11px 13px;font-size:13px;color:var(--ink);margin:0 0 12px;line-height:1.5}
+.seg{display:flex;gap:6px;margin:0 0 12px}
+.seg button{flex:1;background:var(--card);border:1px solid var(--line);color:var(--dim);
+  border-radius:9px;padding:8px 4px;font-size:13px;font-weight:600;cursor:pointer}
+.seg button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+</style>
+</head>
+<body>
+<header>
+  <div class="grow">
+    <h1>TradeFlow</h1>
+    <div class="sub" id="bizline">Tap ⚙ to set up your business</div>
+  </div>
+  <button class="btn ghost sm" onclick="go('more')">⚙</button>
+</header>
+
+<main id="view"></main>
+<button class="fab" id="fab" onclick="fabAction()">+</button>
+
+<nav>
+  <a id="n-home"      onclick="go('home')"><span class="ic">◎</span>TODAY</a>
+  <a id="n-quotes"    onclick="go('quotes')"><span class="ic">✎</span>QUOTES</a>
+  <a id="n-jobs"      onclick="go('jobs')"><span class="ic">▣</span>JOBS</a>
+  <a id="n-invoices"  onclick="go('invoices')"><span class="ic">$</span>INVOICES</a>
+  <a id="n-customers" onclick="go('customers')"><span class="ic">☺</span>PEOPLE</a>
+</nav>
+
+<script src="app.js"></script>
+</body>
+</html>

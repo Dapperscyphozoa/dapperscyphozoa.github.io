@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TradeFlow — quotes, jobs and invoices for Australian trades</title>
+<meta name="description" content="A native Mac app for quotes, jobs and tax invoices. GST done the way the ATO expects. Your data stays on your Mac. Free 90-day beta.">
+<style>
+  :root{
+    --ink:#14110d; --ink2:#4a443c; --line:#e6e0d6; --bg:#faf7f2; --card:#fff;
+    --brass:#c8963e; --brass2:#a3741f; --good:#2e7d54; --bad:#b4443a;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--ink:#f2ede4; --ink2:#a9a196; --line:#2b2721; --bg:#131110; --card:#1b1815;}
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px}
+  header{padding:26px 0 6px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:17px;letter-spacing:-.2px}
+  .mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--brass),var(--brass2));
+        display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px}
+  h1{font-size:clamp(30px,5.2vw,50px);line-height:1.06;letter-spacing:-1.1px;margin:34px 0 14px;font-weight:700}
+  h1 em{font-style:normal;color:var(--brass)}
+  .lede{font-size:clamp(16px,2.3vw,19px);color:var(--ink2);max-width:640px;margin:0 0 22px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:26px 0 10px}
+  .btn{display:inline-block;background:var(--brass);color:#fff;border:0;border-radius:9px;
+       padding:13px 22px;font-size:15px;font-weight:650;cursor:pointer;text-decoration:none}
+  .btn:hover{background:var(--brass2)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .fine{font-size:12.5px;color:var(--ink2)}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{font-size:24px;letter-spacing:-.5px;margin:0 0 6px}
+  h3{font-size:15px;margin:0 0 6px}
+  .sub{color:var(--ink2);margin:0 0 22px;max-width:640px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:18px}
+  .card p{margin:0;color:var(--ink2);font-size:13.5px}
+  label{display:block;font-size:12px;font-weight:600;margin:12px 0 5px}
+  input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;
+        background:var(--bg);color:var(--ink);font:inherit;font-size:14px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .key{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;word-break:break-all;
+       background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:12px;margin:10px 0}
+  .ok{color:var(--good)} .err{color:var(--bad)}
+  ol{padding-left:19px;color:var(--ink2);font-size:14px} ol li{margin:7px 0}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--bg);
+       border:1px solid var(--line);border-radius:5px;padding:1.5px 5px}
+  footer{padding:34px 0 60px;color:var(--ink2);font-size:12.5px;border-top:1px solid var(--line)}
+  .pill{display:inline-block;font-size:11.5px;font-weight:650;color:var(--brass);
+        border:1px solid var(--brass);border-radius:999px;padding:3px 11px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  td{padding:8px 0;border-bottom:1px solid var(--line);color:var(--ink2);vertical-align:top}
+  td:first-child{color:var(--ink);font-weight:600;width:34%}
+
+.tour{margin:28px 0 12px;border:1px solid #23232a;border-radius:14px;overflow:hidden;background:#0d0d10}
+.tour video{display:block;width:100%;height:auto;background:#101012}
+.tour .fine{padding:10px 14px;margin:0;border-top:1px solid #23232a}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand"><span class="mark">»</span> TradeFlow</div></header>
+
+<h1>Quote it. Do it. <em>Get paid for it.</em></h1>
+<p class="lede">A native Mac app for Australian trades: quotes, jobs and tax invoices, with GST calculated the way the ATO expects it. No browser tab, no monthly login, no data on someone else's server.</p>
+<div class="cta">
+  <a class="btn" href="#beta">Get the free beta</a>
+  <a class="btn ghost" href="#buy">Buy a founding licence</a>
+</div>
+<div class="tour">
+  <video controls preload="none" playsinline poster="https://oracle.tail7230c0.ts.net:8443/poster.png" width="100%">
+    <source src="https://oracle.tail7230c0.ts.net:8443/tour.mp4" type="video/mp4">
+  </video>
+  <p class="fine">25 seconds, the actual app - dashboard, customers, quotes, jobs, invoices.</p>
+</div>
+
+<p class="fine"><span class="pill">Beta</span> &nbsp;Free for 90 days, in exchange for telling us what's broken. macOS 13 or later, Apple silicon.</p>
+
+<section id="what">
+  <h2>What it does</h2>
+  <p class="sub">Quote → job → invoice is one click at each step, and each conversion is refused twice, so the same job can't be invoiced two ways.</p>
+  <div class="grid">
+    <div class="card"><h3>Quotes</h3><p>Numbered per business, per-line GST toggle, a clean PDF, one click to turn an accepted quote into a job.</p></div>
+    <div class="card"><h3>Jobs</h3><p>A diary by scheduled date, status through to invoiced, one click to an invoice with the lines already on it.</p></div>
+    <div class="card"><h3>Tax invoices</h3><p>10% GST, part payments, overdue tracking, PDF. The ABN and tax-invoice status are frozen at issue.</p></div>
+    <div class="card"><h3>Payments</h3><p>Paid, part-paid and overdue are <em>derived</em> from money received — never typed in, so the dashboard can't lie to you.</p></div>
+    <div class="card"><h3>Dashboard</h3><p>Outstanding, overdue, received, quotes out, twelve months of receipts, and what needs attention today.</p></div>
+    <div class="card"><h3>Your data</h3><p>One SQLite file on your Mac. Copy it and you've copied the business. Nothing is uploaded.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>The GST detail that costs people money</h2>
+  <p class="sub">GST is rounded to cents <strong>at each line and then summed</strong> — not calculated on the total. The two disagree by a cent often enough to start an argument, and the ATO expects the former. If you're not registered for GST, you charge none, whatever a line says.</p>
+  <table>
+    <tr><td>Registered later</td><td>Invoices already sent keep the face they had when you sent them. Registering for GST never rewrites history.</td></tr>
+    <tr><td>Part payments</td><td>Recorded against the invoice; status follows the money, not a dropdown.</td></tr>
+    <tr><td>Offline</td><td>Everything works with the Wi-Fi off. There is no server to be down.</td></tr>
+  </table>
+</section>
+
+<section id="beta">
+  <h2>The free beta</h2>
+  <p class="sub">It's free for 90 days and the deal is simple: use it on real jobs and tell us what's wrong. There's a feedback box built into the app — what you send goes straight to the person who can fix it. No card, no trial that quietly starts charging.</p>
+  <div class="card">
+    <form id="f" autocomplete="on">
+      <div class="row">
+        <div><label for="n">Business name</label><input id="n" name="name" required placeholder="e.g. Westside Plumbing"></div>
+        <div><label for="e">Email</label><input id="e" name="email" type="email" required placeholder="you@yourbusiness.com"></div>
+      </div>
+      <div class="row">
+        <div><label for="t">Trade</label>
+          <select id="t" name="trade">
+            <option value="">Choose…</option>
+            <option>Plumbing</option><option>Electrical</option><option>Carpentry</option>
+            <option>Concreting</option><option>Fencing</option><option>Landscaping</option>
+            <option>Painting</option><option>Roofing</option><option>Tiling</option>
+            <option>Earthworks</option><option>HVAC</option><option>Other</option>
+          </select></div>
+        <div><label for="p">Postcode</label><input id="p" name="postcode" inputmode="numeric" maxlength="4" placeholder="3027"></div>
+      </div>
+      <div class="cta"><button class="btn" type="submit" id="sb">Send me the beta</button>
+        <span class="fine" id="msg"></span></div>
+    </form>
+    <div id="out" hidden>
+      <p class="ok" style="font-weight:650;margin:4px 0 2px">Your licence key — copy it now, it's also the key you paste into the app:</p>
+      <div class="key" id="k"></div>
+      <div class="cta">
+        <a class="btn" id="dl" href="#">Download TradeFlow</a>
+        <button class="btn ghost" id="cp" type="button">Copy key</button>
+      </div>
+      <p class="fine" id="exp"></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Installing it (60 seconds)</h2>
+  <ol>
+    <li>Open the <strong>.dmg</strong> and drag <strong>TradeFlow</strong> into Applications.</li>
+    <li>The first time, macOS will say it can't check the app for malicious software — the beta isn't notarised by Apple yet. Open <strong>System Settings → Privacy &amp; Security</strong>, scroll down, and press <strong>Open Anyway</strong>. (Or in Terminal: <code>xattr -dr com.apple.quarantine /Applications/TradeFlow.app</code>.)</li>
+    <li>Paste your licence key when the app asks for it. That's the whole setup.</li>
+    <li>Settings → Data → <strong>Load the example</strong> gives you a fictional business to poke at before you put real work in.</li>
+  </ol>
+  <p class="fine">Apple silicon Macs (M1 and later), macOS 13 Ventura or newer. An Intel build is on the list if beta users need one — say so in the feedback box.</p>
+</section>
+
+<section id="buy">
+  <h2>Or just buy it</h2>
+  <p class="sub">Some people don't want a trial, they want the thing. Founding prices while the beta is on: one business, every Mac you own, no per-seat charge, nothing that renews behind your back.</p>
+  <p class="sub">Payment is <strong>USDC on Base</strong> — a stablecoin, one US dollar each. There is no card form because there is no card processor: you send the exact amount from any wallet or exchange, and the licence key appears on your order page about a minute later, issued automatically. Nobody sees your card, because we never ask for one.</p>
+  <div class="grid" id="plans"></div>
+  <div class="card" id="buybox" hidden style="margin-top:16px">
+    <form id="bf">
+      <div class="row">
+        <div><label for="bn">Business name</label><input id="bn" required placeholder="As it appears on your invoices"></div>
+        <div><label for="be">Email</label><input id="be" type="email" required placeholder="you@yourbusiness.com"></div>
+      </div>
+      <label for="ba">ABN (optional — goes on your receipt)</label><input id="ba" placeholder="12 345 678 901">
+      <div class="cta"><button class="btn" type="submit" id="bb">Get payment details</button>
+        <button class="btn ghost" type="button" id="bx">Cancel</button>
+        <span class="fine" id="bmsg"></span></div>
+    </form>
+    <div id="payout" hidden>
+      <p class="ok" style="font-weight:650;margin:4px 0 8px">Send exactly this. The key appears below by itself.</p>
+      <table id="paytbl"></table>
+      <div class="cta"><button class="btn ghost" type="button" id="cpaddr">Copy address</button>
+        <button class="btn ghost" type="button" id="cpamt">Copy amount</button></div>
+      <p class="fine" id="paynote" style="margin-top:4px"></p>
+      <p class="fine">Your reference is <code id="payref"></code> — bookmark this page, it turns into your key.</p>
+      <div id="waiting" class="fine" style="margin-top:10px">⏳ Watching the chain for your payment…</div>
+      <div id="gotkey" hidden>
+        <p class="ok" style="font-weight:650;margin:10px 0 2px">Paid. Here is your licence key:</p>
+        <div class="key" id="paidkey"></div>
+        <div class="cta"><a class="btn" id="paiddl" href="#">Download TradeFlow</a>
+          <button class="btn ghost" type="button" id="cpkey">Copy key</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What happens after the beta</h2>
+  <p class="sub">Beta keys run 90 days. When the beta ends, everyone who used it and sent feedback gets it at <strong>half price</strong> for the first year — you did the work of finding the bugs. Pricing is set once we know it's worth paying for; nothing is charged automatically, and nobody's card is on file, because we never asked for one.</p>
+  <p class="sub">Your data is a file on your Mac. If you stop using TradeFlow, you keep it, and the app never held it hostage in someone else's cloud.</p>
+</section>
+
+<section>
+  <h2>Found something wrong?</h2>
+  <p class="sub">The feedback box lives in the app (Settings → Data). If the app won't open at all, tell us here instead.</p>
+  <div class="card">
+    <form id="fb">
+      <label for="fe">Email (so we can tell you when it's fixed)</label>
+      <input id="fe" type="email" placeholder="you@yourbusiness.com">
+      <label for="fbody">What happened?</label>
+      <textarea id="fbody" rows="4" required placeholder="It wouldn't open / the invoice PDF looked wrong / I wish it could…"></textarea>
+      <div class="cta"><button class="btn ghost" type="submit">Send</button><span class="fine" id="fmsg"></span></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  Built by one operator who got sick of chasing invoices in a spreadsheet, and sold to anyone who wants it.
+  Paid in USDC, no card, no subscription creeping up, no account to close.<br>
+  Your data never leaves your Mac. The only things we are ever told are what you typed into a form on this page.
+</footer>
+</div>
+
+<script>
+const API = "https://oracle.tail7230c0.ts.net:8443";
+const $ = id => document.getElementById(id);
+
+$("f").addEventListener("submit", async e => {
+  e.preventDefault();
+  const btn = $("sb"), msg = $("msg");
+  btn.disabled = true; msg.textContent = "Minting your key…"; msg.className = "fine";
+  try {
+    const r = await fetch(API + "/api/beta", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        name: $("n").value, email: $("e").value, trade: $("t").value,
+        postcode: $("p").value, source: location.hostname || "web"})});
+    const j = await r.json();
+    if (!r.ok || j.error) { msg.textContent = j.error || "Something went wrong."; msg.className = "fine err"; btn.disabled = false; return; }
+    $("f").hidden = true; $("out").hidden = false;
+    $("k").textContent = j.licence;
+    $("dl").href = j.download;
+    $("exp").textContent = (j.returning ? "You already had a key — this is the same one. " : "") +
+      "Valid until " + (j.expires || "").replace("T", " ").replace("Z", " UTC") + ".";
+    $("cp").onclick = () => { navigator.clipboard.writeText(j.licence); $("cp").textContent = "Copied"; };
+  } catch (err) {
+    msg.textContent = "Couldn't reach the licence desk. Try again in a minute.";
+    msg.className = "fine err"; btn.disabled = false;
+  }
+});
+
+// ── buying ───────────────────────────────────────────────────────────────────
+let chosen = null;
+(async () => {
+  try {
+    const r = await fetch(API + "/api/plans");
+    const j = await r.json();
+    const g = $("plans");
+    g.innerHTML = j.plans.map(p => `
+      <div class="card">
+        <h3>${p.name}</h3>
+        <p style="font-size:26px;font-weight:700;color:var(--ink);margin:6px 0 2px">${p.usdc} <span style="font-size:13px;font-weight:400;color:var(--ink2)">USDC</span></p>
+        <p>${p.blurb}</p>
+        <button class="btn" style="margin-top:12px;width:100%" data-plan="${p.key}">Choose</button>
+      </div>`).join("");
+    if (!j.open_for_payment) {
+      g.insertAdjacentHTML("afterend",
+        `<p class="fine" style="margin-top:12px">Founding licences aren't open for payment yet — the free beta is. Beta users get first refusal at half price.</p>`);
+      g.querySelectorAll("button").forEach(b => { b.disabled = true; b.style.opacity = .5; });
+      return;
+    }
+    g.querySelectorAll("button").forEach(b => b.onclick = () => {
+      chosen = b.dataset.plan; $("buybox").hidden = false; $("payout").hidden = true; $("bf").hidden = false;
+      $("bmsg").textContent = j.plans.find(p => p.key === chosen).name;
+      $("buybox").scrollIntoView({behavior: "smooth", block: "center"});
+    });
+  } catch (e) { /* the page still works without the buy path */ }
+})();
+
+$("bx") && ($("bx").onclick = () => { $("buybox").hidden = true; });
+
+$("bf") && $("bf").addEventListener("submit", async e => {
+  e.preventDefault();
+  const m = $("bmsg"); m.textContent = "Getting your reference…"; m.className = "fine";
+  try {
+    const r = await fetch(API + "/api/buy", {method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({plan: chosen, business: $("bn").value, email: $("be").value, abn: $("ba").value})});
+    const j = await r.json();
+    if (!j.ok || !j.payment) { m.textContent = j.message || j.error || "Couldn't start that order."; m.className = "fine err"; return; }
+    $("bf").hidden = true; $("payout").hidden = false; m.textContent = "";
+    $("paytbl").innerHTML = j.payment.lines.map(([k, v]) =>
+      `<tr><td>${k}</td><td style="font-family:ui-monospace,Menlo,monospace;font-size:12.5px;word-break:break-all">${v}</td></tr>`).join("");
+    $("paynote").textContent = j.payment.note;
+    $("payref").textContent = j.ref;
+    $("cpaddr").onclick = () => { navigator.clipboard.writeText(j.payment.address || ""); $("cpaddr").textContent = "Copied"; };
+    $("cpamt").onclick  = () => { navigator.clipboard.writeText(j.payment.amount || ""); $("cpamt").textContent = "Copied"; };
+    watchOrder(j.ref);
+  } catch (err) { m.textContent = "Couldn't reach us just now — try again in a minute."; m.className = "fine err"; }
+});
+
+// The order page turns into the licence key on its own — no email to wait for, nobody to approve.
+function watchOrder(ref) {
+  localStorage.setItem("tf_ref", ref);
+  const tick = async () => {
+    try {
+      const r = await fetch(API + "/api/order/" + ref, {cache: "no-store"});
+      const j = await r.json();
+      if (j.status === "paid" && j.licence) {
+        $("waiting").hidden = true; $("gotkey").hidden = false;
+        $("paidkey").textContent = j.licence;
+        $("paiddl").href = j.download;
+        $("cpkey").onclick = () => { navigator.clipboard.writeText(j.licence); $("cpkey").textContent = "Copied"; };
+        return true;
+      }
+    } catch (e) {}
+    return false;
+  };
+  const id = setInterval(async () => { if (await tick()) clearInterval(id); }, 15000);
+  tick();
+}
+
+// Coming back later? The last reference is remembered on this device.
+(() => {
+  const ref = localStorage.getItem("tf_ref");
+  if (!ref) return;
+  fetch(API + "/api/order/" + ref).then(r => r.json()).then(j => {
+    if (j.status !== "paid") return;
+    $("buybox").hidden = false; $("bf").hidden = true; $("payout").hidden = false;
+    $("payref").textContent = ref; watchOrder(ref);
+  }).catch(() => {});
+})();
+
+$("fb").addEventListener("submit", async e => {
+  e.preventDefault();
+  const m = $("fmsg"); m.textContent = "Sending…"; m.className = "fine";
+  try {
+    const r = await fetch(API + "/api/feedback", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({email: $("fe").value, body: $("fbody").value, kind: "web", version: "site"})});
+    const j = await r.json();
+    m.textContent = j.thanks || j.error || "Sent.";
+    m.className = j.ok ? "fine ok" : "fine err";
+    if (j.ok) $("fbody").value = "";
+  } catch (err) { m.textContent = "Couldn't send — try again shortly."; m.className = "fine err"; }
+});
+</script>
+</body>
+</html>
